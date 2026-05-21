@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BlackManager</string>
+
+    <string name="icon_checkbox">Tasks</string>
+    <string name="icon_folder">Projects</string>
+    <string name="icon_calendar">Calendar</string>
+    <string name="icon_settings">Settings</string>
+</resources>

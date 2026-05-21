@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    android:background="#121212">
+
+    <!-- Toolbar with Up arrow
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1F1F1F"
+        app:title="Log In"
+        app:titleTextColor="#E0E0E0"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+    -->
+
+    <!-- Content container with padding -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <!-- App title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notion"
+            android:textSize="28sp"
+            android:textColor="#E0E0E0"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Explanation text with link -->
+
+        <!-- Integration token input -->
+        <TextView
+            android:id="@+id/tvIntegrationInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:autoLink="web"
+            android:lineSpacingExtra="4dp"
+            android:linksClickable="true"
+            android:text="This app requires an Internal Integration Secret.\nGet yours here:\nhttps://developers.notion.com/docs/create-a-notion-integration"
+            android:textColor="#B0B0B0"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etIntegrationToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your Integration Token"
+            android:textColor="#E0E0E0"
+            android:textColorHint="#707070"
+            android:backgroundTint="#707070"
+            android:inputType="textPassword"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Login button -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log In"
+            android:textColor="#121212"
+            android:background="#E0E0E0"/>
+
+    </LinearLayout>
+
+</LinearLayout>

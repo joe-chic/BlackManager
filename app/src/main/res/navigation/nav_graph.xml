@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    app:startDestination="@id/nav_tasks"
+    android:id="@+id/nav_graph.xml">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="jonathan.humphreys.blackmanager.ui.fragments.LoginFragment"
+        android:label="Login" />
+
+    <fragment
+        android:id="@id/nav_tasks"
+        android:name="jonathan.humphreys.blackmanager.ui.fragments.TasksFragment"
+        android:label="Tasks">
+    </fragment>
+
+    <!-- SETTINGS Fragment -->
+    <fragment
+        android:id="@id/nav_settings"
+        android:name="jonathan.humphreys.blackmanager.ui.fragments.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_to_loginFragment"
+        app:destination="@id/loginFragment" />
+
+    <action
+        android:id="@+id/action_global_to_taskFragment"
+        app:destination="@id/nav_tasks" />
+
+    <action
+        android:id="@+id/action_global_to_settingsFragment"
+        app:destination="@id/nav_settings" />
+</navigation>

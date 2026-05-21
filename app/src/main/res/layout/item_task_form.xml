@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardTaskInputRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:background="#1E1E1E"
+    app:strokeColor="#333333"
+    app:strokeWidth="1dp">
+
+    <!-- drop the ScrollView here -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:divider="?android:attr/dividerVertical"
+        android:showDividers="middle">
+
+        <!-- Title -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título"
+            app:boxStrokeColor="#FFFFFF"
+            app:hintTextColor="@android:color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Description -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción"
+            app:boxStrokeColor="#FFFFFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="3"
+                android:gravity="top"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Assignees dropdown -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Asignados"
+            app:boxStrokeColor="#FFFFFF">
+
+            <AutoCompleteTextView
+                android:id="@+id/actvAssignees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:focusable="true"
+                android:imeOptions="actionDone"
+                android:focusableInTouchMode="true"
+                android:clickable="true"
+                android:dropDownWidth="match_parent"
+                android:popupBackground="#1E1E1E"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AAAAAA"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupAssignees"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:chipSpacing="8dp"/>
+
+        <!-- Kick-off date picker -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de inicio"
+            app:boxStrokeColor="#FFFFFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="#000000"
+                android:textColorHint="#AAAAAA"
+                android:fontFamily="sans-serif"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Deadline picker -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha límite"
+            app:boxStrokeColor="#FFFFFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="#000000"
+                android:textColorHint="#AAAAAA"
+                android:fontFamily="sans-serif"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Priority dropdown -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prioridad"
+            app:boxStrokeColor="#FFFFFF">
+
+            <AutoCompleteTextView
+                android:id="@+id/actvPriority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true"
+                android:dropDownWidth="match_parent"
+                android:popupBackground="#1E1E1E"
+                android:textColor="#000000"
+                android:textColorHint="#AAAAAA"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Status dropdown -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Estado"
+            app:boxStrokeColor="#FFFFFF">
+
+            <AutoCompleteTextView
+                android:id="@+id/actvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true"
+                android:dropDownWidth="match_parent"
+                android:popupBackground="#1E1E1E"
+                android:textColor="#000000"
+                android:textColorHint="#AAAAAA"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Creator readonly -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Creador"
+            app:boxStrokeColor="#888888">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCreator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:enabled="false"
+                android:fontFamily="sans-serif"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Tags dropdown -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Etiquetas"
+            app:boxStrokeColor="#FFFFFF">
+
+            <AutoCompleteTextView
+                android:id="@+id/actvTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:focusable="true"
+                android:imeOptions="actionDone"
+                android:focusableInTouchMode="true"
+                android:clickable="true"
+                android:dropDownWidth="match_parent"
+                android:popupBackground="#1E1E1E"
+                android:textColor="#000000"
+                android:textColorHint="#AAAAAA"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:chipSpacing="8dp"/>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSaveTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Añadir"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="?attr/colorPrimary"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
